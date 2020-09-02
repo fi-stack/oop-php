@@ -1,0 +1,36 @@
+Arguments pada method construct
+
+class Product {
+    public $name;
+    public $color;
+
+    public function __construct($name, $color) {
+        $this->name = $name;
+        $this->color = $color;
+    }
+}
+
+$shirt = new Product("T-Shirt", "Blue");
+echo $shirt->name; // T-Shirt
+echo $shirt->color; // Blue
+
+class Product {
+    public $name;
+    public $color;
+    public $price;
+
+    public function __construct($args=[]) {
+        $this->name = $args['name'] ?? NULL;
+        $this->color = $args['color'] ?? NULL;
+        $this->price = $args['price'] ?? NULL;
+    }
+}
+
+$shirt = new Product([
+    'name' => 'T-Shirt',
+    'color' => 'Blue',
+    'price' => '299'
+]);
+echo $shirt->name; // T-Shirt
+
+Jika kita membuat instance tanpa membuat argumentnya maka property tsb bernilai NULL, nilai null juga berfungsi apabila kekurangan atau kelebihan memberikan arguments didalam construct pada saat membuat instance

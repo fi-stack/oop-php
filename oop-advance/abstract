@@ -1,0 +1,9 @@
+Abstract Class
+merupakan gabungan dari interface dan trait
+
+Abstract Class -> for you and your team
+Interface -> for other developer
+
+abstract dan interface tentang pattern agar struktur project terdokumentasi dengan baik
+
+Kenapa kita harus menggakan abstract class?

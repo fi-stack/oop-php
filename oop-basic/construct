@@ -1,0 +1,20 @@
+Magic Methods
+- __construct()
+- __destruct()
+- __clone()
+- __get(),__set()
+
+Method construct adalah method yang akan bekerja secara otomatis pada saat kita membuat instance object dari suatu class, dan setiap method atau fungsi yang ada di dalam construct tersebut akan bekerja sebelum pemanggilan property atau pemanggilan method lainnya
+
+class Product {
+    public $name;
+    public $color;
+
+    public function __construct() {
+        Logger::log('Creating new product');
+        $this->color = "blue";
+    }
+}
+
+$shirt = new Product;
+echo $shirt->color; // blue

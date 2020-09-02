@@ -1,0 +1,27 @@
+Property dalam Class
+- Variabel yang menyimpan suatu nilai
+- Biasa disebut juga: attributes, class variables, instance variables
+- Didefinisikan dengan keyword 'var' dan dilanjutkan dengan $nama_variabel
+- Bisa diisi nilai secara langsung
+
+class Person {
+    var $first_name;
+    var $last_name;
+    var $student = false;
+    var $country = 'none';
+}
+
+$customer = new Person;
+
+$customer->first_name = "Rafi";
+
+echo $customer->first_name;
+// Rafi
+
+echo $customer->country;
+// none
+
+$customer->country = "Indonesia"
+
+echo $customer->country;
+// Indonesia

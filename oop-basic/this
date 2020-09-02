@@ -1,0 +1,21 @@
+class Person {
+    var $first_name;
+    var $last_name;
+
+    function fullName()
+    {
+        return $first_name . ' ' . $last_name;
+    }
+}
+
+$p = new Person;
+$p->first_name = "Rafi";
+$p->last_name = "Nur Oktafian";
+echo $p->fullName();
+// Notice: undefined variable: first_name, last_name
+
+Cara menggunakan Instance
+Di luar class: $variable->
+Di dalam class: $this->
+
+$this-> memanggil property dari kelas itu sendiri

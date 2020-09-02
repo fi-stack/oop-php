@@ -1,0 +1,8 @@
+Trait
+- Menyediakan proses atau detail implementasi
+- Horizontal Code Sharing
+
+Logging
+Not all of your code requires logging
+
+Trait bisa mendefinisikan suatu fungsi beserta implementasinya tanpa harus memaksa suatu class untuk melakukan extend pada objek class tertentu

@@ -1,0 +1,68 @@
+Type Declaration
+- Petunjuk bagi programmer dan PHP Runtime
+
+public function execute(Table $db)
+
+jika tidak mengisi type hint akan mendapatkan error Missmatch
+
+Perlu Menggunakan Type Declaration?
+- Setiap software tidak dirancang untuk melahap semua tipe data
+- Menghindari error atau kesalahan program karena berbeda tipe data
+
+<?php
+public function foo(
+    \App\Database $db,
+    array $options = [],
+    $bar = 0) {
+
+}
+
+PHP is Dynamic
+Bebas menggunakan tipe data apapun
+
+type declaration -> Mengatasi bugs pada banyak class
+
+Type Declarations Options
+- Class / Interface
+- self / same Class
+- callable
+- array
+- bool
+- float
+- int
+- string
+
+Strict Type Declaration
+mengatasi kedinamisan php dalam menentukan tipe data
+PHP 7 Strict Type Declaration
+- bool
+- float
+- int
+- string
+
+<?php
+public function sum(int $a, int $b) {
+    return $a + $b;
+};
+
+sum(1.5, 2.5);
+
+fungsi declare(strict_types=1); -> maka seluruh variabel akan memiliki tipe data strict
+
+<?php
+declare(strict_types=1);
+public function sum(int $a, int $b) {
+    return $a + $b;
+};
+
+sum(1.5, 2.5);
+
+// function.php
+declare(strict_types=1);
+public function sum(int $a, int $b) {
+    return $a + $b;
+};
+// caller.php
+require function.php;
+sum(1.5, 2.5);
+// maka akan berjalan seperti biasa karena fungsi declare(strict_types=1) hanya bekerja pada 1 dokumen php

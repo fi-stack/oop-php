@@ -1,0 +1,34 @@
+class Product {
+    public static $instanceCount = 0;
+
+    public function __construct() {
+        self::$instanceCount++;
+    }
+
+    public function __destruct() {
+        self::$instanceCount--;
+    }
+}
+
+Destruct Method
+- Bekerja saat referensi terakhir dari instance object dihapus
+- Menggunakan method unset()
+- Script berakhir
+
+class Product {
+    public static $instanceCount = 0;
+
+    public function __construct() {
+        self::$instanceCount++;
+    }
+
+    public function __destruct() {
+        self::$instanceCount--;
+    }
+}
+
+$shirt = new Product;
+echo Product::$instanceCount; // 1
+
+unset($shirt);
+echo Product::$instanceCount; // 0

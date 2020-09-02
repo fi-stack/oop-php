@@ -1,0 +1,19 @@
+Class Constant
+- Digunakan untuk nilai class yang tidak bisa diubah<?php
+- Menggunakan keyword const dan penamaan capital
+- Dapat menyimpan nilai expression
+- Support Visibility Modifier sejak PHP 7.1
+- Perujukkan dengan ClassName:: atau self::
+
+class Time {
+    public const DAY = 60 * 60 * 24;
+
+    public function tomorrow() {
+        return time() + self::DAY;
+    }
+}
+
+echo Time::DAY; //86400
+
+$clock = new Time;
+echo $clock->tomorrow();

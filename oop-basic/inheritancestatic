@@ -1,0 +1,19 @@
+Pewarisan Static Property dan Method
+- Static property dan method bisa diwariskan
+- Pengubah visibilitas / encapsulation berlaku
+- Static property yang diwariskan bersifat shared variables
+- Perubahan nilai pada parent class mempengaruhi subclass
+- Perubahan nilai pada subclass mempengaruhi parent class
+
+class Student {
+    public static $grades = ['SD', 'SMP', 'SMA'];
+}
+
+class PartTimeStudent extends Student {
+}
+
+echo PartTimeStudent::$grades[0]; // SD
+PartTimeStudent::$grades[] = 'Alumni';
+
+echo implode(', ', Student::$grades);
+// SD, SMP, SMA, Alumni

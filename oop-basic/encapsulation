@@ -1,0 +1,25 @@
+Pengubah Visibilitas
+Public - Bisa digunakan di mana saja
+Protected - Hanya bisa digunakan dalam Class dan Subclass
+Private - Hanya bisa digunakan dalam Class-nya itu sendiri
+
+class Example {
+    public $a;
+    protected $b;
+    private $c;
+
+    public function helloWorld() {
+    }
+
+    protected function helloFam() {
+    }
+
+    private function helloMe() {
+    }
+}
+
+Best Practice
+- Selalu gunakan encapsulation / pengubah Visibilitas
+- Pertimbangkan visibilitas saat ngoding
+- Gunakan enkapsulasi Public hanya jika diperlukan
+- Kelompokkan properti atau method pada masing-masing visibilitasnya

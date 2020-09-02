@@ -1,0 +1,10 @@
+class Person {
+    kode properti dan method milik person di sini
+}
+class ProductPhoto {
+}
+
+Tips
+- Diawali huruf kapital / CamelCase
+- Gunakan bentuk kata tunggal
+- Pendefinisikan Class pada masing-masing file - 1 file 1 class saja

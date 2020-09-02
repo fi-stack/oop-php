@@ -1,0 +1,68 @@
+Return Types
+public function getUser(): UserInterface {
+    return $this->userObj;
+}
+
+PHP 7 Return Type Declaration
+- Class / Interface
+- self
+- callable
+- array
+- bool
+- float
+- int
+- string
+
+Tujuan
+Untuk menyamakan jenis data antara function type dan return type
+
+Child Methods arg
+class Table {
+    public function save(array $data) {
+        return true;
+    }
+}
+
+class Mysql extends Table {
+    public function save(bool $data) {
+        return true;
+    }
+}
+
+echo (new Mysql(true))->save(true);
+//Warning: Declaration of Mysql:: save(bool $data) should be compatible with Table::save(array $data)
+
+Child Methods return
+class Table {
+    public function save($data): array {
+        return true;
+    }
+}
+
+class Mysql extends Table {
+    public function save($data): bool {
+        return true;
+    }
+}
+
+echo (new Mysql(true))->save(true);
+// Fatal error: Declaration of Mysql::save($data) : bool must be compatible with table::save($data): array
+
+Child classes dapat menambahkan declaration type
+
+class Table {
+    public function save($data) {
+        return true;
+    }
+}
+
+class Mysql extends Table {
+    public function save($data): bool {
+        return true
+    }
+}
+
+echo (new Mysql([]))->save(true);
+// 1
+
+Kesimpulan dari Type Declaration untuk menghidari bug dengan developer lain

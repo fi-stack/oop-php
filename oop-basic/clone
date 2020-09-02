@@ -1,0 +1,12 @@
+$shirt1 = new Product;
+$shirt1->color = "blue";
+
+$shirt2 = clone $shirt1;
+
+echo $shirt1->color; // blue
+echo $shirt2->color; // blue
+
+$shirt2->color = "red";
+
+echo $shirt1->color; // blue
+echo $shirt2->color; // red
